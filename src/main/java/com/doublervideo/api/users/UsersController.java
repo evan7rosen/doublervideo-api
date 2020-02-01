@@ -3,6 +3,8 @@ package com.doublervideo.api.users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/users")
 
@@ -28,17 +30,17 @@ public class UsersController {
 
     @PostMapping
     public User addOneUser(@RequestBody User newUser) {
-        if (newUser.getEmail() == null || newUser.getPassword() == null) {
-            throw new IllegalArgumentException("Not all fields are valid.");
-        }
-        return usersService.addoneUser(newUser);
+//        if (newUser.getEmail() == null || newUser.getPassword() == null) {
+//            throw new IllegalArgumentException("Not all fields are valid.");
+//        }
+        return usersService.addOneUser(newUser);
     }
 
-    @PatchMapping
-    public User updateOneUser(@RequestBody User updatedUser) {
-        User user = usersService.getOneUser(updatedUser.getId()).orElseThrow(IllegalArgumentException::new);
-        return usersService.updateOneUser(updatedUser);
-    }
+//    @PatchMapping
+//    public User updateOneUser(@RequestBody User updatedUser) {
+//        User user = usersService.getOneUser(updatedUser.getId()).orElseThrow(IllegalArgumentException::new);
+//        return usersService.updateOneUser(updatedUser);
+//    }
 
     @DeleteMapping("/{id}")
     public String removeOneUser(@PathVariable int id) {

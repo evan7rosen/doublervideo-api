@@ -3,6 +3,8 @@ package com.doublervideo.api.videos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/videos")
 
@@ -28,17 +30,17 @@ public class VideosController {
 
     @PostMapping
     public Video addOneVideo(@RequestBody Video newVideo) {
-        if (newVideo.getTitle() == null || newVideo.getUrl() == null) {
-            throw new IllegalArgumentException("Not all fields are valid.");
-        }
-        return videosService.addoneVideo(newVideo);
+//        if (newVideo.getTitle() == null || newVideo.getUrl() == null) {
+//            throw new IllegalArgumentException("Not all fields are valid.");
+//        }
+        return videosService.addOneVideo(newVideo);
     }
 
-    @PatchMapping
-    public Video updateOneVideo(@RequestBody Video updatedVideo) {
-        Video video = videosService.getOneVideo(updatedVideo.getId()).orElseThrow(IllegalArgumentException::new);
-        return videosService.updateOneVideo(updatedVideo);
-    }
+//    @PatchMapping
+//    public Video updateOneVideo(@RequestBody Video updatedVideo) {
+//        Video video = videosService.getOneVideo(updatedVideo.getId()).orElseThrow(IllegalArgumentException::new);
+//        return videosService.updateOneVideo(updatedVideo);
+//    }
 
     @DeleteMapping("/{id}")
     public String removeOneVideo(@PathVariable int id) {
