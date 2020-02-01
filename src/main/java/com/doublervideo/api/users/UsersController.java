@@ -12,7 +12,7 @@ public class UsersController {
     private final UsersService usersService;
 
     public UsersController(UsersService usersService) {
-        this.usersService = usersService
+        this.usersService = usersService;
     }
 
     @GetMapping
