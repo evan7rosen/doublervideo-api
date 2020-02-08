@@ -1,8 +1,11 @@
 package com.doublervideo.api.users;
 
+import com.doublervideo.api.videos.Video;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
@@ -26,6 +29,14 @@ public class User {
 
     @Column
     private String password;
+
+    @ManyToMany
+    @JoinTable(
+            name = "users_videos",
+            joinColumns = @JoinColumn(name ="user_id"),
+            inverseJoinColumns = @JoinColumn(name = "video_id"))
+    @JsonIgnoreProperties("users")
+    private Set<Video> videos;
 
     public User() {}
 }

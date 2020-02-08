@@ -1,8 +1,11 @@
 package com.doublervideo.api.videos;
 
+import com.doublervideo.api.users.User;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -23,6 +26,11 @@ public class Video {
 
     @Column
     private String date;
+
+    @ManyToMany(mappedBy = "videos")
+    @JsonIgnoreProperties("videos")
+    private List<User> users;
+
 
     public Video() {}
 }

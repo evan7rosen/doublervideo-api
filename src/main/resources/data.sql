@@ -6,4 +6,20 @@ INSERT INTO videos(title,url,date) VALUES
 ('AZ Ice Gilbert Holiday Ice Show - A Christmas Fantasy', 'https://drive.google.com/file/d/14R7FoEpID62BKHlXVhTGJQ9UrbNlA8IP/view?usp=sharing', 'December 15, 2018');
 
 INSERT INTO users(name,email,password) VALUES
-('Evan Rosen', 'evan@doublervideo.com', 'DoubleRVid1');
+('Evan Rosen', 'evan@doublervideo.com', 'DoubleRVid1'),
+('Daniel Rosen', 'evan@doublervideo.com', 'DoubleRVid1'),
+('Robert Rosen', 'evan@doublervideo.com', 'DoubleRVid1'),
+('Julie Rosen', 'evan@doublervideo.com', 'DoubleRVid1'),
+('Kristy Rosen', 'evan@doublervideo.com', 'DoubleRVid1');
+
+
+insert into users_videos (user_id, video_id) values (1, 1);
+insert into users_videos (user_id, video_id) values (2, 1);
+insert into users_videos (user_id, video_id) values (3, 2);
+insert into users_videos (user_id, video_id) values (4, 2);
+insert into users_videos (user_id, video_id) values (5, 3);
+insert into users_videos (user_id, video_id) values (1, 3);
+insert into users_videos (user_id, video_id) values (2, 4);
+insert into users_videos (user_id, video_id) values (3, 4);
+insert into users_videos (user_id, video_id) values (4, 5);
+insert into users_videos (user_id, video_id) values (5, 5);
