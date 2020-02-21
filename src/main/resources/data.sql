@@ -1,7 +1,7 @@
 INSERT INTO videos(title,url,date) VALUES
-('AZ Ice Peoria Summer Ice Show - Wish Upon a Star', 'https://drive.google.com/file/d/18kKUH2p5Fg1hQBEmCBC6zm7Gq2UN9GRU', 'May 26, 2018'),
-('AZ Ice Gilbert Holiday Ice Show - The Time Train', 'https://drive.google.com/file/d/1D3tapZ4ZXPkcTEnoPYnm9ht_EP6H1gMb/preview', 'December 7-8 2018'),
-('Ice Den 20th Anniversary Ice Show', 'https://drive.google.com/file/d/1An_vujhcv64-OLfguMoWjbPJoqOYkZB6/preview', 'June 16, 2018'),
+('AZ Ice Peoria Summer Ice Show - Wish Upon a Star', '7uGhUWSmZZY', 'May 26, 2018'),
+('AZ Ice Gilbert Holiday Ice Show - The Time Train', 'QrR_gm6RqCo', 'December 7-8 2018'),
+('Ice Den 20th Anniversary Ice Show', '7TML_MTQdg4', 'June 16, 2018'),
 ('Ice Den Summer Ice Show - Grammys on Ice', 'https://drive.google.com/file/d/1cQgxM-dR5AkgMMkVWKkXRjFliMZrroS0/preview', 'June 15, 2019'),
 ('AZ Ice Gilbert Holiday Ice Show - Aladdin on Ice', 'https://drive.google.com/file/d/1gEGlyNTTbHaagcUwc4tlRG5t7i4DsHxs/preview', 'December 14, 2019');
 
