@@ -37,11 +37,11 @@ public class VideosController {
         return videosService.addOneVideo(newVideo);
     }
 
-//    @PatchMapping
-//    public Video updateOneVideo(@RequestBody Video updatedVideo) {
-//        Video video = videosService.getOneVideo(updatedVideo.getId()).orElseThrow(IllegalArgumentException::new);
-//        return videosService.updateOneVideo(updatedVideo);
-//    }
+    @PatchMapping("/{id}")
+    public Video updateOneVideo(@RequestBody Video updatedVideo) {
+        Video video = videosService.getOneVideo(updatedVideo.getId()).orElseThrow(IllegalArgumentException::new);
+        return videosService.updateOneVideo(updatedVideo);
+    }
 
     @DeleteMapping("/{id}")
     public String removeOneVideo(@PathVariable int id) {

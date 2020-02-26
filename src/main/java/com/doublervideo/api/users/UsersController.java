@@ -3,6 +3,9 @@ package com.doublervideo.api.users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.transaction.Transactional;
 import java.util.List;
 
 @CrossOrigin
@@ -17,6 +20,8 @@ public class UsersController {
     public UsersController(UsersService usersService) {
         this.usersService = usersService;
     }
+
+    EntityManager em = this.em;
 
     @GetMapping
     public List<User> getAllUsers() {
@@ -37,15 +42,22 @@ public class UsersController {
         return usersService.addOneUser(newUser);
     }
 
-//    @PatchMapping
-//    public User updateOneUser(@RequestBody User updatedUser) {
-//        User user = usersService.getOneUser(updatedUser.getId()).orElseThrow(IllegalArgumentException::new);
-//        return usersService.updateOneUser(updatedUser);
-//    }
+    @PatchMapping("/{id}")
+    public User updateOneUser(@RequestBody User updatedUser) {
+        User user = usersService.getOneUser(updatedUser.getId()).orElseThrow(IllegalArgumentException::new);
+        return usersService.updateOneUser(updatedUser);
+    }
 
     @DeleteMapping("/{id}")
+    @Transactional
     public String removeOneUser(@PathVariable int id) {
         User user = usersService.getOneUser(id).orElseThrow(IllegalArgumentException::new);
+
+        Query q1 = em.createNativeQuery("delete from users_videos where user_id = ?");
+        q1.setParameter(1, id);
+        em.joinTransaction();
+        q1.executeUpdate();
+
         return usersService.removeOneUser(id);
     }
 }
