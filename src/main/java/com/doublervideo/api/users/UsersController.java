@@ -8,9 +8,10 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 import java.util.List;
 
-@CrossOrigin
+
 @RestController
 @RequestMapping("/users")
+@CrossOrigin
 
 public class UsersController {
 

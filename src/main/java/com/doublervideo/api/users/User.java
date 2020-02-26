@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Set;
+import java.util.List;
 
 
 @Entity
@@ -36,7 +36,7 @@ public class User {
             joinColumns = @JoinColumn(name ="user_id"),
             inverseJoinColumns = @JoinColumn(name = "video_id"))
     @JsonIgnoreProperties("users")
-    private Set<Video> videos;
+    private List<Video> videos;
 
     public User() {}
 }

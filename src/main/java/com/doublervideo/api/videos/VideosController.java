@@ -3,11 +3,13 @@ package com.doublervideo.api.videos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
-@CrossOrigin
+
 @RestController
 @RequestMapping("/videos")
+@CrossOrigin
 
 public class VideosController {
 
@@ -17,6 +19,8 @@ public class VideosController {
     public VideosController(VideosService videosService) {
         this.videosService = videosService;
     }
+
+    EntityManager em = this.em;
 
     @GetMapping
     public List<Video> getAllVideos() {
