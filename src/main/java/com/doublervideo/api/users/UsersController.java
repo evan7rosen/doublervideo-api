@@ -51,6 +51,7 @@ public class UsersController {
 
     @DeleteMapping("/{id}")
     @Transactional
+    @CrossOrigin
     public String removeOneUser(@PathVariable int id) {
         User user = usersService.getOneUser(id).orElseThrow(IllegalArgumentException::new);
 

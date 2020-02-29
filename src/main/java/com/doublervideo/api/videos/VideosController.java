@@ -53,6 +53,7 @@ public class VideosController {
 
     @DeleteMapping("/{id}")
     @Transactional
+    @CrossOrigin
     public String removeOneVideo(@PathVariable int id) {
         Video video = videosService.getOneVideo(id).orElseThrow(IllegalArgumentException::new);
 
