@@ -17,12 +17,12 @@ public class UsersController {
 
     @Autowired
     private final UsersService usersService;
+    private final EntityManager em;
 
-    public UsersController(UsersService usersService) {
+    public UsersController(UsersService usersService, EntityManager em) {
         this.usersService = usersService;
+        this.em = em;
     }
-
-    EntityManager em = this.em;
 
     @GetMapping
     public List<User> getAllUsers() {
@@ -54,9 +54,9 @@ public class UsersController {
     public String removeOneUser(@PathVariable int id) {
         User user = usersService.getOneUser(id).orElseThrow(IllegalArgumentException::new);
 
-        Query q1 = em.createNativeQuery("delete from users_videos where user_id = ?");
+        Query q1 = this.em.createNativeQuery("delete from users_videos where user_id = ?");
         q1.setParameter(1, id);
-        em.joinTransaction();
+        this.em.joinTransaction();
         q1.executeUpdate();
 
         return usersService.removeOneUser(id);
