@@ -5,7 +5,7 @@ INSERT INTO videos(title,url,date) VALUES
 ('Julian Gil at Desert Breeze Skate Championships', 'K6rNq19SURM', 'June 16, 2013'),
 ('AZ Ice Gilbert Holiday Ice Show - Aladdin on Ice', 'KVWBjEg3yxI', 'December 14, 2019'),
 ('Ice Den Scottsdale Summer Ice Show - Love', 'y_G-lOh12p8', 'June 5, 2018'),
-('Ice Den Scottsdale Holiday Ice Spectacular', '76Fen4BEhgo', 'December 18, 2018')
+('Ice Den Scottsdale Holiday Ice Spectacular', '76Fen4BEhgo', 'December 18, 2018');
 
 INSERT INTO users(name,email,password) VALUES
 ('Evan Rosen', 'evan@doublervideo.com', 'DoubleRVid1'),
